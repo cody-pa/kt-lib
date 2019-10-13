@@ -1,5 +1,6 @@
 /*********************************************************************************
 * a bunch of things i've defined for my own convenience.
+* I store this file in source control and link it from multiple projects
 *********************************************************************************/
 
 // COMMENT TEMPLATES
@@ -35,7 +36,7 @@ Date Created:
 #if defined(_WIN32) or defined (_WIN64) // visual studio 2019
 
 #define CLEAR_SCREEN system("cls")
-#define PAUSE system("PAUSE")
+#define PAUSE printf("Press enter to continue."); WAIT_FOR_ENTER
 
 #elif defined (__linux__)
 
@@ -71,4 +72,17 @@ Date Created:
 
 #endif
 
+// MACROS
+#define LOOPING_INCREMENT(token, max_value) \
+if (token == max_value) { \
+	token = 0; \
+} \
+else ++(token)
+
+// inclusive
+#define RANDOM_RANGE(start, end) ASSERT(end > start) ((rand() % end)+start)
+
+#define STRINGIFY(n) #n
+#define COUNT_DIGITS(n) (sizeof(STRINGIFY(n)) -1)
+#define WAIT_FOR_ENTER fflush(stdin); for (int c; (c =getchar()) != '\n' && c != EOF;);
 #endif
