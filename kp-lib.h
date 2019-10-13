@@ -28,21 +28,32 @@ Date Created:
 #define KP_LIB_H
 
 // my defines
-#define PLATFORM vs
 #define SUCCESS 0
 
 // platform-dependent code ==========================================================================
-#ifdef PLATFORM
-	#if (PLATFORM == vs) // visual studio 2019
-		#define CLEAR_SCREEN system("cls")
-		#define PAUSE system("PAUSE")
-	#else
-		#error Invalid value for PLATFORM
-	#endif
+
+#if defined(_WIN32) or defined (_WIN64) // visual studio 2019
+
+#define CLEAR_SCREEN system("cls")
+#define PAUSE system("PAUSE")
+
+#elif defined (__linux__)
+
+#error Linux macros not yet defined
+
 #else
-	#error PLATFORM must be defined
+
+#error unrecognized OS
+
 #endif
 
+#if defined (_MSC_VER)
+// visual studio
+#define FORCE_INLINE
+#elif defined(__GNUC__)
+// gcc
+#define FORCE_INLINE __attribute__((always_inline))
+#endif
 
 // Debug Stuff ======================================================================================
 #ifdef DEBUG
