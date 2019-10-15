@@ -84,7 +84,7 @@ Date Created:
 	} \
 	else ++(token)
 
-	#define RANDOM_RANGE(start, end) ASSERT(end > start); ((rand() % end)+start) // this is inclusive
+	#define RANDOM_RANGE(start, end) ((rand() % end)+start) // this is inclusive
 
 	#define STRINGIFY(n) #n
 
