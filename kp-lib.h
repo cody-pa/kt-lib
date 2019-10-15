@@ -68,7 +68,7 @@ Date Created:
 	// ==========================================================================
 	// GLOBAL MACROS
 	// ==========================================================================
-	#define STATIC_ASSERT(e) (sizeof(struct { int:-!(e); })) // shamelessly stolen from the linux kernel
+	#define ASSERT(e) (sizeof(struct { int:-!(e); })) // shamelessly stolen from the linux kernel
 
 	#define DUMP_SCAN for (int c; (c = getchar()) != '\n' && c != EOF;) {}
 
@@ -84,11 +84,11 @@ Date Created:
 	} \
 	else ++(token)
 
-	#define RANDOM_RANGE(start, end) ASSERT(end > start) ((rand() % end)+start) // this is inclusive
+	#define RANDOM_RANGE(start, end) ASSERT(end > start); ((rand() % end)+start) // this is inclusive
 
 	#define STRINGIFY(n) #n
 
-	#define COUNT_DIGITS(n) (sizeof(STRINGIFY(n)) -1); { int _verify = n;}
+	#define COUNT_DIGITS(n) (sizeof(STRINGIFY(n)) -1)
 
 #endif KP_LIB_H
 
