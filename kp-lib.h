@@ -57,7 +57,7 @@ Date Created:
 	// ==========================================================================
 	#if defined (_MSC_VER)
 	// visual studio
-		#define FORCE_INLINE
+		#define FORCE_INLINE inline
 
 	#elif defined(__GNUC__)
 		// gcc
@@ -76,7 +76,7 @@ Date Created:
 
 	#define PAUSE printf("Press enter to continue."); WAIT_FOR_ENTER
 
-	#define UNIMPLEMENTED(S) CLEAR_SCREEN; printf_s(#S " is unimplemented.\n"); PAUSE
+	#define UNIMPLEMENTED(S) CLEAR_SCREEN; printf(#S " is unimplemented.\n"); PAUSE
 
 	#define LOOPING_INCREMENT(token, max_value) \
 	if (token == max_value) { \
