@@ -90,6 +90,6 @@ Date Created:
 
 	#define COUNT_DIGITS(n) (sizeof(STRINGIFY(n)) -1)
 
-#endif KP_LIB_H
+#endif
 
 
