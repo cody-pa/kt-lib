@@ -90,6 +90,10 @@ Date Created:
 
 	#define COUNT_DIGITS(n) (sizeof(STRINGIFY(n)) -1)
 
+	#define CHAR_TO_INT(C) ((int)(C-'0'))
+
+	#define INT_TO_CHAR(I) ((char)(I+'0'))
+
 #endif
 
 
