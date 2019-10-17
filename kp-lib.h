@@ -41,7 +41,7 @@ Date Created:
 	// ==========================================================================
 	// OS DEPENDENT
 	// ==========================================================================
-	#if defined(_WIN32) || defined (_WIN64) // visual studio 2019
+	#if defined(_WIN32) || defined (_WIN64) // windows
 		#define CLEAR_SCREEN system("cls")
 	#elif defined (__linux__)
 		// TODO: change this to something more platform independent.
