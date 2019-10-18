@@ -94,7 +94,7 @@ Date Created:
 
 	#define INT_TO_CHAR(I) ((char)(I+'0'))
 
-	#define INITIALIZE_ARRAY(ARR, SIZE, VAL) for (int i = 0; i < SIZE; ++i) (ARR)[i] = VAL;
+	#define INITIALIZE_ARRAY(ARR, SIZE, VAL) for (int _INIT_ARRAY_INDEX = 0; _INIT_ARRAY_INDEX < SIZE; ++_INIT_ARRAY_INDEX) (ARR)[_INIT_ARRAY_INDEX] = VAL;
 
 #endif
 
