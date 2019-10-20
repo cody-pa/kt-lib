@@ -78,11 +78,12 @@ Date Created:
 
 	#define UNIMPLEMENTED(S) CLEAR_SCREEN; printf(#S " is unimplemented.\n"); PAUSE
 
+//max is exclusive
 	#define LOOPING_INCREMENT(token, max_value) \
+	++(token);\
 	if (token == max_value) { \
 		token = 0; \
 	} \
-	else ++(token)
 
 	#define RANDOM_RANGE(start, end) ((rand() % end)+start) // this is inclusive
 
