@@ -79,12 +79,6 @@ Date Created:
 	#define UNIMPLEMENTED(S) CLEAR_SCREEN; printf(#S " is unimplemented.\n"); PAUSE
 
 //max is exclusive
-	#define LOOPING_INCREMENT(token, max_value) \
-	++(token);\
-	if (token == max_value) { \
-		token = 0; \
-	} \
-
 	#define RANDOM_RANGE(start, end) ((rand() % end)+start) // this is inclusive
 
 	#define STRINGIFY(n) #n
@@ -95,7 +89,7 @@ Date Created:
 
 	#define INT_TO_CHAR(I) ((char)(I+'0'))
 
-	#define INITIALIZE_ARRAY(ARR, SIZE, VAL) for (int _INIT_ARRAY_INDEX = 0; _INIT_ARRAY_INDEX < SIZE; ++_INIT_ARRAY_INDEX) (ARR)[_INIT_ARRAY_INDEX] = VAL;
+	#define INITIALIZE_ARRAY(ARR, SIZE, VAL) for (size_t _INIT_ARRAY_INDEX = 0; _INIT_ARRAY_INDEX < SIZE; ++_INIT_ARRAY_INDEX) (ARR)[_INIT_ARRAY_INDEX] = VAL;
 
 #endif
 
