@@ -76,8 +76,6 @@
 	// ==========================================================================
 	#define ASSERT(e) (sizeof(struct { int:-!(e); })) // shamelessly stolen from the linux kernel
 
-	#define DUMP_STDIN for (int _ch; (_ch =getchar()) != '\n' && _ch != EOF;) {}
-
 	#define WAIT_FOR_ENTER for (int _ch; (_ch =getchar()) != '\n' && _ch != EOF;) {}
 
 	#define PAUSE printf("Press enter to continue."); WAIT_FOR_ENTER
@@ -102,7 +100,7 @@
 	// ==========================================================================
 	// FUNCTIONS
 	// ==========================================================================
-	void input_string_and_flush(char * input_buffer, size_t size);
+	void input_line(char * input_buffer, size_t size);
 	bool yn_prompt(char * prompt);
 #endif
 
