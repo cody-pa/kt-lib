@@ -18,20 +18,26 @@
 // ==========================================================================
 // FUNCTION COMMENT TEMPLATE
 // ==========================================================================
-/*
-Input parameters:
-Output parameters:
-Returns:
-Preconditions:
-Postconditions:
-Date Last Modified:
-Description:
-Date Created:
-*/
+/// Date Created: 
+/// Date Modified: 
+/// Input params: 
+/// Output params: 
+/// Returns: 
+/// Preconditions: 
+/// Postconditions: 
+/// Description: 
 
 
 #ifndef KP_LIB_H
 #define KP_LIB_H
+
+	#include <stdlib.h>
+	#include <stdio.h>
+	#include <string.h>
+	// ==========================================================================
+	// TYPES
+	// ==========================================================================
+	typedef enum {false, true} bool;
 
 	// ==========================================================================
 	// CONSTANTS
@@ -70,16 +76,16 @@ Date Created:
 	// ==========================================================================
 	#define ASSERT(e) (sizeof(struct { int:-!(e); })) // shamelessly stolen from the linux kernel
 
-	#define DUMP_SCAN for (int c; (c = getchar()) != '\n' && c != EOF;) {}
+	#define DUMP_STDIN for (int _ch; (_ch =getchar()) != '\n' && _ch != EOF;) {}
 
-	#define WAIT_FOR_ENTER for (int c; (c =getchar()) != '\n' && c != EOF;);
+	#define WAIT_FOR_ENTER for (int _ch; (_ch =getchar()) != '\n' && _ch != EOF;) {}
 
 	#define PAUSE printf("Press enter to continue."); WAIT_FOR_ENTER
 
 	#define UNIMPLEMENTED(S) CLEAR_SCREEN; printf(#S " is unimplemented.\n"); PAUSE
 
 //max is exclusive
-	#define RANDOM_RANGE(start, end) ((rand() % end)+start) // this is inclusive
+	#define RANDOM_RANGE(MIN, MAX) (MIN + rand() / (RAND_MAX / (MAX - MIN + 1) + 1))// this is inclusive
 
 	#define STRINGIFY(n) #n
 
@@ -91,6 +97,13 @@ Date Created:
 
 	#define INITIALIZE_ARRAY(ARR, SIZE, VAL) for (size_t _INIT_ARRAY_INDEX = 0; _INIT_ARRAY_INDEX < SIZE; ++_INIT_ARRAY_INDEX) (ARR)[_INIT_ARRAY_INDEX] = VAL;
 
+	#define UNUSED(x) (void)(x)
+
+	// ==========================================================================
+	// FUNCTIONS
+	// ==========================================================================
+	void input_string_and_flush(char input[], size_t size);
+	bool yn_prompt(char * prompt);
 #endif
 
 
