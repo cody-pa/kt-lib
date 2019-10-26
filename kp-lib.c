@@ -1,16 +1,18 @@
 #include "kp-lib.h"
 
-void input_string_and_flush(char input[], size_t size)
+/// This function calls fgets with the given input buffer
+/// and then flushes stdin.
+void input_string_and_flush(char * input_buffer, size_t size)
 {
-	if (fgets(input, size, stdin))
+	if (fgets(input_buffer, size, stdin))
 	{
-		if (!strchr(input, '\n'))
+		if (!strchr(input_buffer, '\n'))
 		{
-			DUMP_STDIN;
+			for (int ch; (ch =getchar()) != '\n' && ch != EOF;);
 		}
 	} else
 	{
-		input[0] = '\0';
+		input_buffer[0] = '\0';
 	}
 }
 

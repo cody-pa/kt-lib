@@ -102,7 +102,7 @@
 	// ==========================================================================
 	// FUNCTIONS
 	// ==========================================================================
-	void input_string_and_flush(char input[], size_t size);
+	void input_string_and_flush(char * input_buffer, size_t size);
 	bool yn_prompt(char * prompt);
 #endif
 
