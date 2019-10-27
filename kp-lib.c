@@ -2,6 +2,7 @@
 
 /// This function calls fgets with the given input buffer
 /// and then flushes stdin.
+/// size should include space for the null terminator.
 void input_line(char * input_buffer, size_t size)
 {
 	if (fgets(input_buffer, size, stdin))
