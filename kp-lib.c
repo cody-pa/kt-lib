@@ -22,25 +22,26 @@ bool yn_prompt(char * prompt)
 	const char * error_message = "";
 	char input = '\0';
 	bool play_again = false;
-	while (true)
+	bool valid_input = false;
+	do
 	{
 		
 		CLEAR_SCREEN;
 		printf("%s (y/n)\n\n* %s\n\n >> ", prompt, error_message);
-		input = getchar();
+		input = (char)getchar();
 		if (input == 'y') 
 		{
 			play_again = true;
-			break;
+			valid_input = true;
 		}
 		else if (input == 'n')
 		{
 			play_again = false;
-			break;
-		}
+			valid_input = true;
+		} while (!valid_input);
 
 		error_message = "Please input y or n.";
 	}
-	while ((input = getchar()) != '\n') ;
+	while ((input = (char)getchar()) != '\n') ;
 	return play_again;
 }

@@ -30,7 +30,6 @@
 
 #ifndef KP_LIB_H
 #define KP_LIB_H
-
 	#include <stdlib.h>
 	#include <stdio.h>
 	#include <string.h>
@@ -49,9 +48,13 @@
 	// ==========================================================================
 	#if defined(_WIN32) || defined (_WIN64) // windows
 		#define CLEAR_SCREEN system("cls")
+		#define MAKE_DIR(A, B) mkdir(A)
+		#define restrict __restrict
 	#elif defined (__linux__)
 		// TODO: change this to something more platform independent.
 		#define CLEAR_SCREEN printf("\033[H\033[J")
+
+		#define MAKE_DIR(A, B) mkdir(A, B)
 	#elif defined (OS_OVERRIDE)
 
 	#else
@@ -96,6 +99,7 @@
 	#define INITIALIZE_ARRAY(ARR, SIZE, VAL) for (size_t _INIT_ARRAY_INDEX = 0; _INIT_ARRAY_INDEX < SIZE; ++_INIT_ARRAY_INDEX) (ARR)[_INIT_ARRAY_INDEX] = VAL;
 
 	#define UNUSED(x) (void)(x)
+
 
 	// ==========================================================================
 	// FUNCTIONS
