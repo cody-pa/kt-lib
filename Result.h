@@ -32,19 +32,19 @@ public:
     /// The use must call this function to actually access the 
     /// stored data of the result.
     template <class Fail, class Success>
-    void use_result(Fail fail_action, Success success_action)
+    auto use_result(Fail fail_action, Success success_action)
     {
         /// The first lambda is executed if the 
         /// result is a failure, and the expected data is not passed.
         if (!success)
         {
-            fail_action();
+            return fail_action();
         }
         /// The second lambda receives the value the user expects,
         /// and is only executed if the result is a success.
         else
         {
-            success_action(data);
+            return success_action(data);
         }
     }
 private:
