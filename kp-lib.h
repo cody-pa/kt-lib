@@ -54,7 +54,7 @@
 		#define restrict __restrict
 	#elif defined (__linux__)
 		// TODO: change this to something more platform independent.
-		#define CLEAR_SCREEN printf("\033[H\033[J")
+		#define CLEAR_SCREEN { int _a_ = system("clear"); UNUSED(_a_); }//printf("\033[H\033[J")
 
 		#define MAKE_DIR(A, B) mkdir(A, B)
 	#elif defined (OS_OVERRIDE)
@@ -87,7 +87,6 @@
 
 	#define UNIMPLEMENTED(S) CLEAR_SCREEN; printf(#S " is unimplemented.\n"); PAUSE
 
-//max is exclusive
 	#define RANDOM_RANGE(MIN, MAX) (MIN + rand() / (RAND_MAX / (MAX - MIN + 1) + 1))// this is inclusive
 
 	#define STRINGIFY(n) #n
