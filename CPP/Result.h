@@ -1,12 +1,17 @@
-/// Result
-///
-/// This class is used when a function that returns some value has a
-/// possibility of failure. The class requires the user to pass two
-/// lambda functions to access the contents; The first lambda
-/// is to contain code to be executed in the case of a failure, and
-/// receives no value. The second lambda will be passed the value
-/// that was meant to be received and the user may execute code
-/// to use it there.
+
+/*+-------------------------------------------------------------------+
+  | Result                                                            |
+  |                                                                   |
+  | This class is used when a function that returns some value has a  |
+  | possibility of failure. The class requires the user to pass two   |
+  | lambda functions to access the contents; The first lambda is to   |
+  | contain code to be executed in the case of a failure, and         |
+  | receives no value. The second lambda will be passed the value     |
+  | that was meant to be received and the user may execute code to    |
+  | use it there. Even if the user decides to simply steal the result |
+  | from inside the lambda, the user is forced to acknowledge the     |
+  | possibility of a failure.                                         |
+  +-------------------------------------------------------------------+ */
 
 template <class T>
 class Result
