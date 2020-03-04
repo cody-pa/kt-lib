@@ -1,4 +1,4 @@
-#include "kp-lib.h"
+#include "c.h"
 
 /// This function calls fgets with the given input buffer
 /// and then flushes stdin.
