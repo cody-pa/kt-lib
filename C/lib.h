@@ -18,15 +18,14 @@
 // ==========================================================================
 // FUNCTION COMMENT TEMPLATE
 // ==========================================================================
-/// Date Created: 
-/// Date Modified: 
-/// Input params: 
-/// Output params: 
-/// Returns: 
-/// Preconditions: 
+///   Date Created: 
+///  Date Modified: 
+///   Input params: 
+///  Output params: 
+///        Returns: 
+///  Preconditions: 
 /// Postconditions: 
-/// Description: 
-
+///    Description: 
 
 #ifndef KP_LIB_H
 #define KP_LIB_H
