@@ -18,10 +18,10 @@ class Result
 {
 public:
     /// If passed a value on construction, then the operation was a success.
-    Result(T data)
+    Result(T pdata)
     {
         this->success = true;
-        this->data = data;
+        this->data = pdata;
     }
     /// Otherwise, the operation was a failure.
     Result()
