@@ -1,4 +1,4 @@
-#include "c.h"
+#include "lib.h"
 
 /// This function calls fgets with the given input buffer
 /// and then flushes stdin.
